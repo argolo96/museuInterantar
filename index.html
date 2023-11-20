@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museu 3D Digital</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+  
+</head>
+<body>
+    <div class="container">
+        <div class="container-bg">
+            <div class="sky">
+                <div onclick="abrir(0)" onmouseover="porCima(0)" onmouseout="porFora()" class="animal" id="skua">
+                    
+                </div>
+            </div>
+            <div id= "teia-baleia" class="teia"></div>
+            <div class="sea">
+                <img src="img/jubarte.png" onclick="abrir(1)" onmouseover="porCima(1)" onmouseout="porFora()" class="animal" id="whale">
+                    
+                </img>
+
+                <div onclick="abrir(2)" onmouseover="porCima(2)" onmouseout="porFora()"  class="animal" id="isopoda">
+                        
+                </div>
+                
+            </div>
+            
+        </div>
+        <div class="land">
+            
+        </div>
+
+        <div id="whaleModal" class="modal">
+
+          <!-- Modal content -->
+          <div class="modal-content">
+            
+            
+            <div class="viewer">
+                
+            </div>
+            <div class="div-info">
+               <span onclick="fechar()" class="close">&times;</span> 
+               <h1 class="nome-do-animal">Baleia-jubarte</h1>
+                <h2 class="nome-cientifico">Megaptera novaeangliae</h2>
+                <p></p>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div id="isopodaModal" class="modal">
+
+          <!-- Modal content -->
+          <div class="modal-content">
+            
+            
+            <div class="viewer-wrap">
+               <div class="sketchfab-embed-wrapper"> <iframe class="viewer" title="Isopoda" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share  src="https://sketchfab.com/models/7f7fc6452c234930ac36c8385d551831/embed?ui_theme=dark"> </iframe> </div>
+                
+            </div>
+            <div class="div-info">
+               <span onclick="fechar()" class="close">&times;</span> 
+               <h1 class="nome-do-animal">Isópoda antártico gigante</h1>
+                <h2 class="nome-cientifico">Glyptonotus antarcticus</h2>
+                <p></p>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div id="skuaModal" class="modal">
+
+          <!-- Modal content -->
+          <div class="modal-content">
+            
+            
+            <div class="viewer-wrap">
+               <div class="sketchfab-embed-wrapper"> <iframe class="viewer" title="Isopoda" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share  src="https://sketchfab.com/models/7f7fc6452c234930ac36c8385d551831/embed?ui_theme=dark"> </iframe> </div>
+                
+            </div>
+            <div class="div-info">
+               <span onclick="fechar();" class="close">&times;</span> 
+               <h1 class="nome-do-animal">Mandrião-antártico</h1>
+                <h2 class="nome-cientifico">Catharacta antarctica</h2>
+                <p></p>
+            </div>
+
+          </div>
+
+        </div>
+        
+    </div>
+    <div id="footer">
+            
+    </div>
+
+    <script>
+    // Get the modal
+    var whale_modal = document.getElementById("whaleModal");
+    var skua_modal = document.getElementById("skuaModal");
+    var isopoda_modal = document.getElementById("isopodaModal");
+    var whale_hover = document.getElementById("teia-baleia");
+
+    function abrir (indice){
+        switch(indice){
+            case 0:
+                skua_modal.style.display = "block";
+                break;
+            case 1:                
+                whale_modal.style.display = "block";
+                break;
+            case 2:                
+                isopoda_modal.style.display = "block";
+                break;
+
+        }
+    }
+
+    function fechar(){
+        skua_modal.style.display = "none"; 
+        whale_modal.style.display = "none";
+        isopoda_modal.style.display = "none"
+    }
+
+
+
+    function porCima(indice)
+{
+    switch(indice){
+        case 1:
+            document.getElementById("teia-baleia").style.display = "block";
+    }
+    var obj = document.getElementById("");
+    obj.style.display = "block";
+}
+ 
+function porFora()
+{
+
+    
+    document.getElementById("teia-baleia").style.display = "none";
+
+}
+
+
+    
+    window.onclick = function(event) {
+      if (event.target == whale_modal) {
+        whale_modal.style.display = "none";
+      }
+      if (event.target == skua_modal) {
+        skua_modal.style.display = "none";
+      }
+
+    }
+    </script>
+</body>
+</html>
