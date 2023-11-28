@@ -51,10 +51,21 @@ body{
     width: 300px;
     height: 120px; 
     left: 700px; 
-    top: 500px; 
+    top: 800px; 
     
 }
+#foca-wedell{
+    width: 135px;
+    height: 50px;
+    top: 380px;
+}
 
+#orca{
+    width: 240px;
+    height: 80px;
+    top: 700px;
+    left: 80px;
+}
 #skua{
     margin-top:25px;
     width: 70px;

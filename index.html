@@ -14,24 +14,30 @@
     <div class="container">
         <div class="container-bg">
             <div class="sky">
-                <div onclick="abrir(0)" onmouseover="porCima(0)" onmouseout="porFora()" class="animal" id="skua">
+                <img onclick="abrir(0)" onmouseover="porCima(0)" onmouseout="porFora()" class="animal" id="skua">
                     
-                </div>
+                </img>
             </div>
             <div id= "teia-baleia" class="teia"></div>
             <div class="sea">
                 <img src="img/jubarte.png" onclick="abrir(1)" onmouseover="porCima(1)" onmouseout="porFora()" class="animal" id="whale">
                     
                 </img>
-
-                <div onclick="abrir(2)" onmouseover="porCima(2)" onmouseout="porFora()"  class="animal" id="isopoda">
+                <img src="img/orca.png" onclick="abrir(4)" onmouseover="porCima(4)" onmouseout="porFora()"  class="animal" id="orca">
                         
-                </div>
+                </img>
+
+                <img onclick="abrir(2)" onmouseover="porCima(2)" onmouseout="porFora()"  class="animal" id="isopoda">
+                        
+                </img>
                 
             </div>
             
         </div>
         <div class="land">
+            <img src="img/foca-de-wedell.png" onclick="abrir(3)" onmouseover="porCima(3)" onmouseout="porFora()"  class="animal" id="foca-wedell">
+                        
+                </img>
             
         </div>
 
@@ -96,6 +102,48 @@
           </div>
 
         </div>
+        <div id="weddellModal" class="modal">
+
+          <!-- Modal content -->
+          <div class="modal-content">
+            
+            
+            <div class="viewer-wrap">
+               <div class="sketchfab-embed-wrapper"> <iframe class="viewer" title="Isopoda" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share  src="https://sketchfab.com/models/7f7fc6452c234930ac36c8385d551831/embed?ui_theme=dark"> </iframe> </div>
+                
+            </div>
+            <div class="div-info">
+               <span onclick="fechar();" class="close">&times;</span> 
+               <h1 class="nome-do-animal">Foca-de-weddell</h1>
+                <h2 class="nome-cientifico">Leptonychotes weddellii</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in commodo ligula. Phasellus bibendum cursus mauris, quis consectetur enim dignissim non. Etiam non justo eu lacus rhoncus mollis id sit amet ligula. Vestibulum pellentesque magna metus, vel rutrum eros pretium at. Cras tincidunt diam at condimentum imperdiet. Proin laoreet euismod elit, vitae volutpat magna condimentum non. Donec non bibendum nibh, ac commodo velit.<br>
+
+                Maecenas euismod interdum ipsum in tristique. Morbi risus ex, venenatis at felis in, porta porttitor enim. Fusce fringilla varius diam vitae hendrerit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis rutrum scelerisque pulvinar. Aenean consequat iaculis elit, in consectetur nibh congue aliquet. Nullam pretium tortor nunc, mattis tristique mi faucibus eget. Donec consectetur mi nunc, id pretium purus mollis vitae. Sed nulla lorem, interdum non tincidunt at, mattis et libero. Fusce fermentum et leo vitae fermentum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In id ultrices mauris. Morbi nec magna pellentesque, pretium diam ac, consectetur dui. Curabitur turpis nibh, maximus eu neque eu, commodo consequat lectus.</p>
+            </div>
+
+          </div>
+
+        </div>
+        <div id="orcaModal" class="modal">
+
+          <!-- Modal content -->
+          <div class="modal-content">
+            
+            
+            <div class="viewer-wrap">
+               <div class="sketchfab-embed-wrapper"> <iframe class="viewer" title="Isopoda" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share  src="https://sketchfab.com/models/7f7fc6452c234930ac36c8385d551831/embed?ui_theme=dark"> </iframe> </div>
+                
+            </div>
+            <div class="div-info">
+               <span onclick="fechar();" class="close">&times;</span> 
+               <h1 class="nome-do-animal">Orca</h1>
+                <h2 class="nome-cientifico">Orcinus orca</h2>
+                <p></p>
+            </div>
+
+          </div>
+
+        </div>
         
     </div>
     <div id="footer">
@@ -107,6 +155,8 @@
     var whale_modal = document.getElementById("whaleModal");
     var skua_modal = document.getElementById("skuaModal");
     var isopoda_modal = document.getElementById("isopodaModal");
+    var weddell_modal = document.getElementById("weddellModal");
+    var orca_modal = document.getElementById("orcaModal");
     var whale_hover = document.getElementById("teia-baleia");
 
     function abrir (indice){
@@ -120,6 +170,13 @@
             case 2:                
                 isopoda_modal.style.display = "block";
                 break;
+            case 3:
+                weddell_modal.style.display = "block";
+                break;
+            case 4:
+                orca_modal.style.display = "block";
+                break;
+
 
         }
     }
@@ -127,7 +184,9 @@
     function fechar(){
         skua_modal.style.display = "none"; 
         whale_modal.style.display = "none";
-        isopoda_modal.style.display = "none"
+        isopoda_modal.style.display = "none";
+        weddell_modal.style.display = "none";
+        orca_modal.style.display = "none";
     }
 
 
@@ -159,6 +218,16 @@ function porFora()
       if (event.target == skua_modal) {
         skua_modal.style.display = "none";
       }
+      if (event.target == isopoda_modal) {
+        isopoda_modal.style.display = "none";
+      }
+      if (event.target == weddell_modal) {
+        weddell_modal.style.display = "none";
+      }
+      if (event.target == orca_modal) {
+        orca_modal.style.display = "none";
+      }
+
 
     }
     </script>
